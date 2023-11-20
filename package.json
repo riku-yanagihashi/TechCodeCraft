@@ -1,0 +1,16 @@
+{
+  "name": "joint-dev",
+  "version": "1.0.0",
+  "description": "> Flask と postgressql で 掲示板サイトを作りました",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "npx tailwindcss -i ./app/static/css/input.css -o ./app/static/css/output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tailwindcss": "^3.3.5"
+  }
+}

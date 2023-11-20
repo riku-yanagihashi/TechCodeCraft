@@ -1,0 +1,39 @@
+version: "3"
+services:
+  app: &app
+    container_name: techcode-app
+    tty: true
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      target: PYTHON
+    volumes:
+      - type: bind
+        source: app
+        target: /work/app
+    ports:
+      - "5001:5000"
+    env_file:
+      - .env
+    depends_on:
+      - db
+    command: python3 app.py
+  tailwind:
+    container_name: techcode-tailwind
+    <<: *app
+    build:
+      target: TAILWIND
+    command: npm run build-css
+    ports: []
+  db:
+    container_name: techcode-postgres
+    image: postgres:latest
+    restart: always
+    ports:
+      - '5432:5432'
+    volumes:
+      - type: bind
+        source: db
+        target: /var/lib/postgresql/data
+    env_file:
+      - .env
