@@ -3,7 +3,7 @@ from datetime import datetime
 
 from flask import Flask, redirect, render_template, request, url_for
 from flask_login import (LoginManager, UserMixin, login_required, login_user,
-                         logout_user)
+                         logout_user, current_user)
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 
@@ -63,11 +63,12 @@ def index():
 
 
 @app.route("/create", methods=["GET", "POST"])
+@login_required
 def create():
     if request.method == "POST":
         title = request.form.get("title")
         content = request.form.get("content")
-        post = Post(title=title, content=content)
+        post = Post(title=title, content=content, user_id=current_user.id)
         db.session.add(post)
         db.session.commit()
         return redirect(url_for("index"))
