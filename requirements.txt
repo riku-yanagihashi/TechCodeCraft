@@ -12,3 +12,4 @@ psycopg2-binary==2.9.9
 SQLAlchemy==2.0.23
 typing_extensions==4.8.0
 Werkzeug==3.0.1
+Flask-Login==0.6.3

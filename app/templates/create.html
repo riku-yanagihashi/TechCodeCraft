@@ -1,7 +1,10 @@
 {% extends "base.html" %}
-
-
 {% block content %}
-	<p>作成</p>
+    <form action="/create" method="post">
+        <label for="title">タイトル:</label><br>
+        <input type="text" id="title" name="title"><br>
+        <label for="content">コンテント:</label><br>
+        <textarea id="content" name="content"></textarea><br>
+        <input type="submit" value="投稿">
+    </form>
 {% endblock %}
-

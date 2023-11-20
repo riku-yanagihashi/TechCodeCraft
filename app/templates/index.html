@@ -1,57 +1,59 @@
 {% extends "base.html" %}
 {% block content %}
-    <header>
-        <nav class="bg-blue-500 p-4 text-white">
-            <div class="container mx-auto">
-                <div class="flex justify-between">
-                    <div>
-                        <a href="#" class="text-lg font-semibold">TechCodeCraft</a>
-                    </div>
-                    <div>
-                        <a href="#" class="mx-2">Home</a>
-                        <a href="#" class="mx-2">Services</a>
-                        <a href="#" class="mx-2">Document</a>
-                        <button type="button"
-                                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            <svg class="w-4 h-4"
-                                 aria-hidden="true"
-                                 xmlns="http://www.w3.org/2000/svg"
-                                 fill="none"
-                                 viewBox="0 0 14 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                            </svg>
-                            <span class="sr-only">New</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <header class="bg-blue-200 text-center py-20">
-        <h1 class="text-4xl mb-4 font-bold">Preservation of Technical Experience</h1>
-        <p class="text-xl font-bold">
-            By storing the technologies I have learned in a way that suits my preferences, I support the improvement of my skills.
-        </p>
-    </header>
-    <section class="container mx-auto py-20">
-        <h2 class="text-3xl mb-10 text-center">Tech Skills Learned</h2>
-        <div class="grid grid-cols-3 gap-10">
-            <div class="bg-blue-100 p-4">
-                <h3 class="text-xl mb-2">Web Development</h3>
-                <p>Let our expert developers create dynamic and responsive web applications tailored to your needs.</p>
-            </div>
-            <div class="bg-blue-100 p-4">
-                <h3 class="text-xl mb-2">Web Automation</h3>
-                <p>
-                    Enhance efficiency through our web automation solutions, leveraging technology to optimize tasks, minimize errors, and save time.
-                </p>
-            </div>
-            <div class="bg-blue-100 p-4">
-                <h3 class="text-xl mb-2">Automotive Software</h3>
-                <p>
-                    In the era of smart vehicles, we drive automotive innovation through software solutions for infotainment and vehicle management.
-                </p>
-            </div>
-        </div>
-    </section>
+<header>
+	<nav class="bg-blue-500 p-4 text-white">
+		<div class="container mx-auto">
+			<div class="flex justify-between">
+				<div>
+					<a href="#" class="text-lg font-semibold">TechCodeCraft</a>
+				</div>
+				<div>
+					<a href="#" class="mx-2">Home</a>
+					<a href="#" class="mx-2">Services</a>
+					<a href="#" class="mx-2">Document</a>
+					<button type="button" onclick="location.href='/create'"
+						class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+						<svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+							viewBox="0 0 14 10">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								d="M1 5h12m0 0L9 1m4 4L9 9" />
+						</svg>
+						<span class="sr-only">New</span>
+						<span class="ml-2">New</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</nav>
+</header>
+<header class="bg-blue-200 text-center py-20">
+	<h1 class="text-4xl mb-4 font-bold">Preservation of Technical Experience</h1>
+	<p class="text-xl font-bold">
+		By storing the technologies I have learned in a way that suits my preferences, I support the improvement of my
+		skills.
+	</p>
+</header>
+<section class="container mx-auto py-20">
+	<h2 class="text-3xl mb-10 text-center">Tech Skills Learned</h2>
+	<div class="grid grid-cols-3 gap-10">
+		<div class="bg-blue-100 p-4">
+			<h3 class="text-xl mb-2">Web Development</h3>
+			<p>Let our expert developers create dynamic and responsive web applications tailored to your needs.</p>
+		</div>
+		<div class="bg-blue-100 p-4">
+			<h3 class="text-xl mb-2">Web Automation</h3>
+			<p>
+				Enhance efficiency through our web automation solutions, leveraging technology to optimize tasks,
+				minimize errors, and save time.
+			</p>
+		</div>
+		<div class="bg-blue-100 p-4">
+			<h3 class="text-xl mb-2">Automotive Software</h3>
+			<p>
+				In the era of smart vehicles, we drive automotive innovation through software solutions for infotainment
+				and vehicle management.
+			</p>
+		</div>
+	</div>
+</section>
 {% endblock %}
