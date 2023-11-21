@@ -6,8 +6,13 @@ module.exports = {
     "./app/**/*.py"
   ],
   theme: {
-    extend: {},
+    extend: {
+      zIndex: {
+        '-1': '-1',
+      }
+    }
   },
+  variants: {},
   plugins: [],
 }
 

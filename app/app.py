@@ -2,8 +2,8 @@ import os
 from datetime import datetime
 
 from flask import Flask, redirect, render_template, request, url_for
-from flask_login import (LoginManager, UserMixin, login_required, login_user,
-                         logout_user, current_user)
+from flask_login import (LoginManager, UserMixin, current_user, login_required,
+                         login_user, logout_user)
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 
@@ -16,9 +16,8 @@ app.config[
     host=os.environ.get("POSTGRES_HOST"),
     port=os.environ.get("POSTGRES_PORT"),
     db=os.environ.get("POSTGRES_DB"),
-
 )
-app.config['SECRET_KEY'] = 'your_secret_key_here'
+app.config["SECRET_KEY"] = "your_secret_key_here"
 
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
@@ -60,6 +59,12 @@ def load_user(user_id):
 @app.route("/")
 def index():
     return render_template("index.html")
+
+
+@app.route("/home")
+def home():
+    posts = Post.query.order_by(Post.timestamp.desc()).all()
+    return render_template("home.html", posts=posts)
 
 
 @app.route("/create", methods=["GET", "POST"])
