@@ -2,7 +2,7 @@
 {% block content %}
 
 <!-- 上の方のヘッダー -->
-<header class="bg-transparent">
+<header class="bg-transparent absolute z-10 w-full">
 	<nav class="p-4 text-white">
 		<div class="container mx-auto">
 			<div class="flex justify-between">
@@ -21,11 +21,11 @@
 </header>
 
 <!-- メインの要素 -->
-<header class="text-center relative h-96 flex justify-center items-center">
+<main class="text-center relative h-screen flex justify-center items-center">
 
 	<!-- 動画を背景にする要素 -->
     <video autoplay loop muted playsinline class="absolute w-full h-full object-cover">
-        <source src="{{ url_for('static', filename='video/background.mp4') }}" type="video/mp4">
+        <source src="{{ url_for('static', filename='video/bgvivivi.mp4') }}" type="video/mp4">
     </video>
 
 	<!-- テキストとボタン要素 -->
@@ -37,7 +37,7 @@
         </p>
         <button onclick="location.href='/home'" type="button" class="px-6 py-3.5 text-base font-medium bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 m-9">Get started</button>
     </div>
-</header>
+</main>
 
 
 <section class="container mx-auto py-20">

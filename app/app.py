@@ -34,6 +34,7 @@ class User(UserMixin, db.Model):
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(120), nullable=False)
+    subtitle = db.Column(db.String(120), nullable=True)
     content = db.Column(db.Text, nullable=False)
     timestamp = db.Column(db.DateTime, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
@@ -64,7 +65,7 @@ def index():
 @app.route("/home")
 def home():
     posts = Post.query.order_by(Post.timestamp.desc()).all()
-    return render_template("home.html", posts=posts)
+    return render_template("home.html", posts=posts, current_time=datetime.utcnow())
 
 
 @app.route("/create", methods=["GET", "POST"])
