@@ -1,0 +1,21 @@
+/*ヘッダーのホバーアニメーション*/
+.hover-underline {
+    position: relative;
+    text-decoration: none;
+}
+
+.hover-underline::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white; /* アンダーラインの色 */
+    transition: width 0.3s;
+}
+
+.hover-underline:hover::before {
+    width: 100%;
+}
+/*end:ホバーアニメーション*/

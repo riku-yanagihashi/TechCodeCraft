@@ -1,66 +1,78 @@
 {% extends "base.html" %}
 {% block content %}
+    <!-- 上の方のヘッダー -->
+    <header class="bg-transparent fixed z-10 w-full">
+        <nav class="p-4 text-white">
+            <div class="container mx-auto">
+                <div class="flex justify-between">
+                    <div>
+                        <a href="#top" class="text-lg font-semibold">TechCodeCraft</a>
+                    </div>
+                    <div>
+                        <a href="/" class="mx-2 hover-underline">Home</a>
+                        <a href="#" class="mx-2 hover-underline">About</a>
+                        <a href="#" class="mx-2 hover-underline">Document</a>
+                        <a href="#" class="mx-2 hover-underline">Profile</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- メインの要素 -->
+    <main id="top"
+          class="text-center relative h-screen flex justify-center items-center">
+        <!-- 動画を背景にする要素 -->
+        <video autoplay
+               loop
+               muted
+               playsinline
+               class="absolute w-full h-full object-cover">
+            <source src="{{ url_for('static', filename='video/rebackground.mp4') }}"
+                    type="video/mp4">
+        </video>
+        <!-- テキストとボタン要素 -->
+        <div class="z-10 relative text-white">
+            <h1 class="text-4xl mb-4 font-bold">Infuse innovation into that space.</h1>
+            <p class="text-xl font-bold">
+                By storing the technologies I have learned in a way that suits my preferences, I support the improvement of my
+                skills.
+            </p>
 
-<!-- 上の方のヘッダー -->
-<header class="bg-transparent fixed z-10 w-full">
-	<nav class="p-4 text-white">
-		<div class="container mx-auto">
-			<div class="flex justify-between">
-				<div>
-					<a href="#top" class="text-lg font-semibold">TechCodeCraft</a>
-				</div>
-				<div>
-					<a href="/" class="mx-2">Home</a>
-					<a href="login" class="mx-2">Login</a>
-					<a href="#" class="mx-2">Document</a>
-					<a href="#" class="mx-2">Profile</a>
-				</div>
-			</div>
-		</div>
-	</nav>
-</header>
-
-<!-- メインの要素 -->
-<main id="top" class="text-center relative h-screen flex justify-center items-center">
-
-	<!-- 動画を背景にする要素 -->
-    <video autoplay loop muted playsinline class="absolute w-full h-full object-cover">
-        <source src="{{ url_for('static', filename='video/rebackground.mp4') }}" type="video/mp4">
-    </video>
-
-	<!-- テキストとボタン要素 -->
-    <div class="z-10 relative text-white">
-        <h1 class="text-4xl mb-4 font-bold">Infuse innovation into that space.</h1>
-        <p class="text-xl font-bold">
-            By storing the technologies I have learned in a way that suits my preferences, I support the improvement of my
-            skills.
-        </p>
-        <button onclick="location.href='/home'" type="button" class="px-6 py-3.5 text-base font-medium bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 m-9">Get started</button>
-    </div>
-</main>
-
-
-<section class="container mx-auto py-20">
-	<h2 class="text-3xl mb-10 text-center">Tech Skills Learned</h2>
-	<div class="grid grid-cols-3 gap-10">
-		<div class="bg-blue-100 p-4">
-			<h3 class="text-xl mb-2">Web Development</h3>
-			<p>Let our expert developers create dynamic and responsive web applications tailored to your needs.</p>
-		</div>
-		<div class="bg-blue-100 p-4">
-			<h3 class="text-xl mb-2">Web Automation</h3>
-			<p>
-				Enhance efficiency through our web automation solutions, leveraging technology to optimize tasks,
-				minimize errors, and save time.
-			</p>
-		</div>
-		<div class="bg-blue-100 p-4">
-			<h3 class="text-xl mb-2">Automotive Software</h3>
-			<p>
-				In the era of smart vehicles, we drive automotive innovation through software solutions for infotainment
-				and vehicle management.
-			</p>
-		</div>
-	</div>
-</section>
-{% endblock %}
+			<!-- homeに遷移させるボタンプログラム -->
+            <button onclick="location.href='/home'"
+                    type="button"
+                    class="px-6 py-3.5 text-base font-medium bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 m-9">
+                Get started
+            </button>
+            <!-- ログインページに飛ぶ -->
+            <button onclick="location.href='/login'" class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+                <span class="relative px-6 py-3.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                    Login
+                </span>
+			</button>
+            </div>
+        </main>
+        <section class="container mx-auto py-20">
+            <h2 class="text-3xl mb-10 text-center">Tech Skills Learned</h2>
+            <div class="grid grid-cols-3 gap-10">
+                <div class="bg-blue-100 p-4">
+                    <h3 class="text-xl mb-2">Web Development</h3>
+                    <p>Let our expert developers create dynamic and responsive web applications tailored to your needs.</p>
+                </div>
+                <div class="bg-blue-100 p-4">
+                    <h3 class="text-xl mb-2">Web Automation</h3>
+                    <p>
+                        Enhance efficiency through our web automation solutions, leveraging technology to optimize tasks,
+                        minimize errors, and save time.
+                    </p>
+                </div>
+                <div class="bg-blue-100 p-4">
+                    <h3 class="text-xl mb-2">Automotive Software</h3>
+                    <p>
+                        In the era of smart vehicles, we drive automotive innovation through software solutions for infotainment
+                        and vehicle management.
+                    </p>
+                </div>
+            </div>
+        </section>
+    {% endblock %}
