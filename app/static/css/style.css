@@ -20,7 +20,14 @@
 }
 /*end:ホバーアニメーション*/
 
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inconsolata&family=Rajdhani:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inconsolata&family=Montserrat:wght@100&family=Rajdhani:wght@500&family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inconsolata&family=Montserrat:wght@100&family=Rajdhani:wght@500&display=swap');
+
 .logo-font {
-	font-family: 'Rajdhani' sans-serif;
+	font-family: 'Roboto', sans-serif;
+}
+
+.desc-font {
+	font-family: 'Montserrat', sans-serif;
+	text-align: left;
 }

@@ -20,7 +20,7 @@
     </header>
     <!-- メインの要素 -->
     <main id="top"
-          class="text-center relative h-screen flex justify-center items-center">
+          class="text-center relative h-screen flex justify-start items-center">
         <!-- 動画を背景にする要素 -->
         <video autoplay
                loop
@@ -32,28 +32,39 @@
         </video>
         <!-- テキストとボタン要素 -->
         <div class="z-10 relative text-white">
-            <h1 class="text-4xl mb-4 font-bold logo-font">TechCodeCraft</h1>
-
-			<!-- homeに遷移させるボタンプログラム -->
-            <button onclick="location.href='/home'"
-                    type="button"
-                    class="px-6 py-3.5 text-base font-medium bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 m-9">
-                Get started
-            </button>
-            <!-- ログインページに飛ぶ -->
-            <button onclick="location.href='/login'" class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
-                <span class="relative px-6 py-3.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                    Login
-                </span>
-			</button>
+            <div class="ml-36">
+                <h1 class="text-4xl mb-4 font-bold logo-font">Code Your Journey</h1>
+                <p class="desc-font font-thin justify-start">
+                    Embark on a coding adventure with us
+                    <br>
+                    and unlock a world of possibilities.
+                </p>
+                <!-- homeに遷移させるボタンプログラム -->
+                <div id="button" class="text-left">
+                    <button onclick="location.href='/home'"
+                            type="button"
+                            class="px-6 py-3.5 text-base font-medium bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mt-9 mr-9 mb-9">
+                        Get started
+                    </button>
+                    <!-- ログインページに飛ぶ -->
+                    <button onclick="location.href='/login'"
+                            class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+                        <span class="relative px-6 py-3.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                            Login
+                        </span>
+                    </button>
+                </div>
             </div>
-        </main>
-        <section class="mx-auto py-20">
-        	<div>
+        </div>
+    </main>
+    <section class="mx-auto py-20">
+        <div>
             <h2 class="text-3xl mb-10 text-center">About</h2>
-            	<h1>Infuse innovation into that space.</h1>
-            	<p>By storing the technologies I have learned in a way that suits my preferences, I support the improvement of my
-                skills.</p>
-            </div>
-        </section>
-    {% endblock %}
+            <h1>Infuse innovation into that space.</h1>
+            <p>
+                By storing the technologies I have learned in a way that suits my preferences, I support the improvement of my
+                skills.
+            </p>
+        </div>
+    </section>
+{% endblock %}
