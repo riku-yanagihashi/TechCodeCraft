@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
     {% for post in posts %}
-    <article>
-        <header>
-            <p>{{ post.user.username }}</p>
-            <p><small>{{ (current_time - post.timestamp).days }} days ago</small></p>
-        </header>
-        <h2>{{ post.title }}</h2>
-        <hr>
-    </article>
+        <article class="bg-white p-4 rounded-lg shadow">
+            <img src="https://cdn.discordapp.com/attachments/701323967318851625/1163746836905996318/IMG_0754.jpg?ex=657811b3&is=65659cb3&hm=78faa90c7cde5d32f66612e3b371da8d53cf64f2c093b34d3da0bc0978077cf9&" class="w-full h-36 object-cover mb-4 rounded-md">
+            
+            <h1 class="text-xl text-black font-bold mb-2">{{ post.title }}</h1>
+            <p class="text-gray-600">{{ post.content }}</p>
+        </article>
     {% endfor %}
+</div>
 {% endblock %}
